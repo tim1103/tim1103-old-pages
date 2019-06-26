@@ -4,19 +4,19 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Web实验室</title>
 	</head>
-<!--百度统计-->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?04e828ac441acffeb4a6bc5698f79d55";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+	<!--百度统计-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?04e828ac441acffeb4a6bc5698f79d55";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 
 	<style>
-@charset "utf-8";
+		@charset "utf-8";
 * {
 margin: 0;
 padding: 0;
@@ -26,6 +26,7 @@ box-sizing: border-box;
 font-family: Microsoft Yahei, "微软雅黑", "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 html, body {
+	margin-top: 40px;
 width: 100%;
 height: 100%;
 }
@@ -114,6 +115,7 @@ animation: upDown 2s infinite;
 
 /* 页面主容器 */
 .container{
+
 max-width: 1100px;
 margin: 0 auto;
 position: relative;
@@ -364,122 +366,7 @@ opacity: 0.6;
 opacity: 1;
 }
 
-/* 备案信息 */
-.web-record {
-margin-top: 20px;
-color: #777575;
-}
-.web-record>a {
-transition: all 0.25s ease;
--webkit-transition: all 0.25s ease;
-color: #777575;
-font-size: 14px;
-white-space: nowrap;
-}
-.web-record>a:hover {
-text-decoration: underline;
-}
-.web-record>a>img {
-opacity: 0.4;
-vertical-align: text-top;
-}
-.web-record>a:hover>img {
-opacity: 0.8;
-}
 
-.social>a {
-display:inline-block;
-position:relative;
-}
-.social>a[href]:after, .social>a[href]:before {
--webkit-transition: all .18s ease-out .18s;
-transition: all .18s ease-out .18s;
-opacity: 0;
-display: none;
-left: 50%;
-bottom: 100%;
--webkit-transform: translate3d(-50%,10px,0);
-transform: translate3d(-50%,10px,0);
-position: absolute;
-}
-/* 下面的三角 */
-.social>a[href]:after {
-border-top: 8px solid #222;
-border-top: 8px solid hsla(0,0%,0%,.85);
-border-left: 8px solid transparent;
-border-right: 8px solid transparent;
-content: "";
-height: 0;
-width: 0;
-
-margin-bottom: 8px;
-}
-/* 气泡主体 */
-.social>a[href]:before {
-background: #222;
-background: hsla(0,0%,0%,.85);
-color: #f6f6f6;
-content: attr(mkpop);
-
-font-size: 14px;
-height: 32px;
-
-margin-bottom: 15px;
-
-line-height: 32px;
-padding: 0 15px;
-
-text-shadow: 0 1px 1px hsla(0,0%,0%,1);
-white-space: nowrap;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
--o-border-radius: 5px;
-border-radius: 5px;
-}
-/* 鼠标滑过时显示出来 */
-.social>a[href]:hover:after, .social>a[href]:hover:before {
-display: block;
-opacity: 1;
-}
-
-/* 返回顶部按钮。样式来自水墨寒博客 https://smohan.net/ */
-.mk-uptop {
-width: 40px;
-height: 40px;
-position: fixed;
-bottom: 20px;
-right: -60px;
-background-color: rgba(67,69,70,.75);
-z-index: 50;
--webkit-transition: all .36s ease;
-transition: all .36s ease;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-cursor: pointer;
-}
-.mk-uptop:before {
-content: "";
-width: 12px;
-height: 12px;
-border-top: 1px solid hsla(0,0%,100%,.75);
-border-right: 1px solid hsla(0,0%,100%,.75);
-position: absolute;
-top: 45%;
-left: 55%;
--webkit-transform: rotate(-45deg) translate(-50%,-50%);
-transform: rotate(-45deg) translate(-50%,-50%);
-}
-.mk-uptop:hover {
-background-color: rgb(67,69,70);
-background-color: rgba(67,69,70,1);
-}
-.mk-uptop.show {
-right: 12px;
--webkit-transform: scale(1) rotate(-1turn) translate(0);
-transform: scale(1) rotate(-1turn) translate(0);
-}
 
 /* 上下移动动画效果 */
 @-webkit-keyframes upDown {0% {-webkit-transform: translate3d(0, 0, 0); opacity: 1;}100% {-webkit-transform: translate3d(0, 8px, 0);opacity: 0;}}
@@ -498,9 +385,34 @@ transform: scale(1) rotate(-1turn) translate(0);
 
 /* 拉伸弹动效果 */
 @keyframes rubberBand {0% {transform: scaleX(1)} 30% {transform: scale3d(1.25, .75, 1)}40% {transform: scale3d(.75, 1.25, 1)}50% {transform: scale3d(1.15, .85, 1)}65% {transform: scale3d(.95, 1.05, 1)}75% {transform: scale3d(1.05, .95, 1)}to {transform: scaleX(1)}}
+		nav {
+		height: 60px;
+		box-shadow: 0 0 5px 0 rgba(0,0,0,0.43);
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(255,255,255,0.95);
+		width: 100%;
+		text-decoration: none;
+	}
+	a {
+		text-decoration: none;
+		color:black;
+	}
+	#homepage {
+		padding: 0 35px;
+		line-height: 55px;
+	}
+	#tools{
+		
+	}
 	</style>
+	<nav>
+		<a href="/" id="homepage">Web实验室</a>
+		<a href="#" id="tools">工具</a>
+	</nav>
 	<body>
-		<h3 class="mk-sub-title"><span></span><span >web实验室</span></h3>
 		<div class="container">
 			<section class="section">
 				<a name="product"></a>
@@ -508,125 +420,129 @@ transform: scale(1) rotate(-1turn) translate(0);
 					<div class="mk-item"></div>
 					<div class="mk-item">
 						<a href="/yzm" target="_blank">
-						<article class="mk-color-item color1">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/01/5cf1da60f252f20031.png"/>
-							</div>
-							<h3>验证码DEMO</h3>
-							<p>
-								滑动式验证码
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color1">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/01/5cf1da60f252f20031.png" />
+								</div>
+								<h3>验证码DEMO</h3>
+								<p>
+									滑动式验证码
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 					<!-- mk-item -->
 
 					<div class="mk-item">
 						<a href="/hao" target="_blank">
-						<article class="mk-color-item color3">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/01/5cf1db244eef047399.png" />
-							</div>
-							<h3>单页导航</h3>
-							<p>
-								开发者的导航
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color3">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/01/5cf1db244eef047399.png" />
+								</div>
+								<h3>单页导航</h3>
+								<p>
+									开发者的导航
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 					<div class="mk-item">
 						<a href="/js" target="_blank">
-						<article class="mk-color-item color4">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/01/5cf1dc730308924206.png" />
-							</div>
-							<h3>图片墙</h3>
-							<p>
-								一堆乱七八糟的图片
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color4">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/01/5cf1dc730308924206.png" />
+								</div>
+								<h3>图片墙</h3>
+								<p>
+									一堆乱七八糟的图片
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 					<div class="mk-item">
 						<a href="/jttl" target="_blank">
-						<article class="mk-color-item color3">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/01/5cf1e00436ea737169.png"/>
-							</div>
-							<h3>鸡兔同笼</h3>
-							<p>
-								在线计算鸡兔同笼
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color3">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/01/5cf1e00436ea737169.png" />
+								</div>
+								<h3>鸡兔同笼</h3>
+								<p>
+									在线计算鸡兔同笼
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 					<div class="mk-item">
 						<a href="/js/jc.html" target="_blank">
-						<article class="mk-color-item color6">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/01/5cf1dd39cea3735125.png"/>
-							</div>
-							<h3>屏幕检测</h3>
-							<p>
-								分辨率,高,宽......
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color6">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/01/5cf1dd39cea3735125.png" />
+								</div>
+								<h3>屏幕检测</h3>
+								<p>
+									分辨率,高,宽......
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 					<!-- mk-item -->
 					<div class="mk-item">
 						<a href="/mta" target="_blank">
-						<article class="mk-color-item color2">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/01/5cf1de662ebf071547.png"/>
-							</div>
-							<h3>MTA实验室</h3>
-							<p>
-								各种测试......
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color2">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/01/5cf1de662ebf071547.png" />
+								</div>
+								<h3>MTA实验室</h3>
+								<p>
+									各种测试......
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 					<div class="mk-item">
 						<a href="/jz" target="_blank">
-						<article class="mk-color-item color3">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/01/5cf1df5e67b5635012.png"/>
-							</div>
-							<h3>剪纸生成器</h3>
-							<p>
-								真好看......
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color3">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/01/5cf1df5e67b5635012.png" />
+								</div>
+								<h3>剪纸生成器</h3>
+								<p>
+									真好看......
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 					<div class="mk-item">
 						<a href="/blog" target="_blank">
-						<article class="mk-color-item color6">
-							<div class="item-logo">
-								<img src="https://i.loli.net/2019/06/08/5cfb0f986ce9738619.png"/>
-							</div>
-							<h3>博客</h3>
-							<p>
-								一堆乱七八糟的记录......
-							</p>
-							<i class="light"></i>
-						</article> </a>
+							<article class="mk-color-item color6">
+								<div class="item-logo">
+									<img src="https://i.loli.net/2019/06/08/5cfb0f986ce9738619.png" />
+								</div>
+								<h3>博客</h3>
+								<p>
+									一堆乱七八糟的记录......
+								</p>
+								<i class="light"></i>
+							</article>
+						</a>
 					</div>
 				</div>
 			</section>
 			<section class="section">
 		</div>
 		</section>
-		<div class="mk-sub-title" style="font-size:22px;">
-			<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-			<script type="text/javascript">
-				var ip = returnCitySN["cip"];
-				var country = returnCitySN["cname"];
-				var a = "您的ip:" + ip + "<br/>" + "城市:" + country;
-				document.write(a)
-			</script>
-		</div>
-
+		<!--闲聊么-->
+		<script>
+			var xlm_wid = '14658';
+			var xlm_url = 'https://www.xianliao.me/';
+		</script>
+		<script type='text/javascript' charset='UTF-8' src='https://www.xianliao.me/embed.js'></script>
 	</body>
 </html>
