@@ -15,8 +15,7 @@ $(document).ready(function(){
 				 {name:"w",action:"http://www.soso.com/q",value:"腾讯搜索",subcolor:"#760AAA",stype:"./images/sanjiao_05.png"},
 				 {name:"query",action:"http://www.xuan369.com/so/qqkk8.jsp",value:"搜狗搜索",subcolor:"#F94F1B",stype:"./images/sanjiao_06.png"},
 				 {name:"q",action:"http://209.85.228.42/search",value:"谷歌搜索",subcolor:"#29C971",stype:"./images/sanjiao_07.png"}
-				]};
-	if(location.href.indexOf("maorx.cn") <= -1){location.href="https://www.maorx.cn/";} 
+				]}; 
 	//alert(search_types.types[1].value);
 	//选择搜索类型按钮被点击
 	checktype.click(function(){
