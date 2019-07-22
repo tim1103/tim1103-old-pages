@@ -20,12 +20,9 @@ window.onload=function(){
 	isAndroid = ua.match(/(Android)\s+([\d.]+)/),
 	isMobile = isIphone || isAndroid;
 	if(isMobile){
-		form0.action="https://m.baidu.com/s";
+		form0.action="https://m.so.com/s";
 		bgbox.style.backgroundSize="auto 100%";
 		bgbox.style.backgroundPosition="center";
-	}
-	if(location.hostname && location.hostname != atob("YS5tYW9yeC5jbg==")){
-		location.href = atob("aHR0cHM6Ly9hLm1hb3J4LmNuLw==");
 	}
 	bgPreference = localStorage.getItem("bgPreference");
 	if(bgPreference == undefined){
