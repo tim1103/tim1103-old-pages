@@ -1,14 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 	<head>
+		<!-- HTML written by MaoRX.cn -->
+		<!-- Copyright MaoRX. All Rights Reserved. -->
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="../../favicon.ico">
-		<!--百度统计,-->
+		<meta name="description" content="web实验室" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>开始</title>
+		<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/MobiusBeta/a.maorx.cn/images/icon_new.ico"/>
+		<style type="text/css">
+			@import "styles/a.css";
+		</style>
+		<script src="js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+		<script src="js/keyword.js"></script>
+		<script src="js/quote.js"></script>
+	</head>
+
+	<body>
+		<form id="form0" action="https://www.baidu.com/s" target="_blank">
+			<video src="https://cdn.jsdelivr.net/gh/MobiusBeta/a.maorx.cn/videos/Live_Wallpaper_1.mp4" id="liveBgBox" autoplay="true" loop="true" muted="true"></video>
+			<input type="text" class="input" id="input0" name="word" size="30" placeholder="Search" autocomplete="off" onfocus="Input_Focus()" onblur="Input_Blur()" onkeydown="Input_KeyDown(event)">
+			<div class="bgbox" id="bgbox"></div>
+			<div class="cover" id="cover"></div>
+			<input type="submit" class="btn_search" value="Search">
+		</form>
+		<div class="keyword" id="keyword"></div>
+		<div class="quotebox" id="quotebox">
+			<p class="quote-content"></p>
+			<p class="quote-author"></p>
+		</div>
+		<div class="navbox" id="navbox" onclick="Navbox_Click(event)">
+			<div class="navbox0">
+				<!--<div class="navboxes" id="navboxCus">
+					<table>
+						<tr>
+							<td><a class="nav_links" id="newNavLink"><i class="iconfont shouldNotFade" id="iconAdd">&#xe620;</i></a></td>
+						</tr>
+					</table>
+				</div>-->
+				<div class="navboxes" id="navbox1">
+					<table>
+						<tr>
+							<td><a href="/dw" target="_blank" class="nav_links">翻译</a></td>
+							<td><a href="/hao" target="_blank" class="nav_links">地图</a></td>
+							<td><a href="/yzm" target="_blank" class="nav_links">图片</a></td>
+							<td><a href="/js" target="_blank" class="nav_links">QQ邮箱</a></td>
+							<td><a href="/jttl" target="_blank" class="nav_links">网易邮箱</a></td>
+						</tr>
+						<tr>
+							<td><a href="/js/jc.html" target="_blank" class="nav_links">京东</a></td>
+							<td><a href="/mta" target="_blank" class="nav_links">淘宝</a></td>
+							<td><a href="/jz" target="_blank" class="nav_links">Bilibili</a></td>
+							<td><a href="https://5iux.github.io/" target="_blank" class="nav_links">优酷</a></td>
+							<td><a href="/dh" target="_blank" class="nav_links">网盘</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://pszpsz1992.000webhostapp.com/" target="_blank" class="nav_links">GitHub</a></td>
+							<td><a href="/blog" target="_blank" class="nav_links">天猫</a></td>
+							<td><a href="https://airportal.cn/" target="_blank" class="nav_links">空投</a></td>
+							<!--<td><a class="nav_links" id="newNavLink">新增</a></td>-->
+						</tr>
+					</table>
+				</div>
+				<div class="navboxes" id="navbox2">
+					<span class="shouldNotFade" id="noteListWrap">
+						<span class="shouldNotFade" id="noteList">
+							<div class="noteItem shouldNotFade" onclick="newNote()">
+								<i class="iconfont shouldNotFade" id="iconAdd">&#xe620;</i><span class="noteTitle shouldNotFade" id="noteTitle0">新便笺</span>
+							</div>
+							<!--<div class="noteItem shouldNotFade" id="noteItem1" onclick="openNote(this)">
+								<span class="noteTitle shouldNotFade" id="noteTitle1">便笺标题</span><br>
+								<span class="noteTime shouldNotFade" id="noteTime1">05:20</span>
+							</div>-->
+						</span>
+					</span>
+					<textarea class="shouldNotFade" id="textNote" placeholder="在此键入以创建新的便笺" oninput="saveNote()"></textarea>
+					<div class="shouldNotFade" id="noteToolBar">
+						<span class="toolBarBtns" id="btnDelNote" title="删除便笺" onclick="delNote()"><i class="iconfont shouldNotFade">&#xe614;</i></span>
+						<span class="toolBarBtns" id="btnPinNote" title="固定便笺到主屏幕" onclick="pinNote()"><i class="iconfont shouldNotFade" id="iconPin">&#xe849;</i></span>
+					</div>
+				</div>
+			</div>
+			<div class="navboxSwitch">
+				<span class="nbSwitch shouldNotFade" id="nbSwitch0" onclick="nbSwitch0_Click()"><span class="shouldNotFade" id="nbSwitch0_0"></span></span>
+				<span class="nbSwitch shouldNotFade" id="nbSwitch1" onclick="nbSwitch1_Click()"><span class="shouldNotFade current" id="nbSwitch1_0"></span></span>
+				<span class="nbSwitch shouldNotFade" id="nbSwitch2" onclick="nbSwitch2_Click()"><span class="shouldNotFade"  id="nbSwitch2_0"></span></span>
+			</div>
+			<!--<div class="navboxTmp">
+				<a class="nav_links" id="nav_function" onclick="ChangeBG()">切换为默认背景</a>
+			</div>-->
+		</div>
+		<div class="title" id="title" onclick="Title_Click(event)"><h1 id="titleText" onmouseenter="titleHover()" onmouseout="titleHover2()">开始</h1></div>
+		<span id="btnSettings" title="设置" onclick="showSettings()"><i class="iconfont">&#xe673;</i></span>
+		<span id="btnLike" title="喜欢这张壁纸" onclick="likeClick()"><i class="iconfont">&#xe64f;</i>&nbsp;<span id="numLiked">LSY</span></span>
+		<div id="pinnedBox">
+			<div class="pinnedNote" id="pinnedNote" onmousemove="pinnedNoteHover(event,this)" onmouseout="pinnedNoteHover2(this)">
+				<div id="pinnedNoteContent">别回头，背后没有明天</div>
+				<div id="pinnedNoteTime">2019年8月13日 05:20</div>
+				<span class="btnCloseS" id="btnUnpin" onclick="unpinNote()" title="取消固定"></span>
+			</div>
+		</div>
+		<div class="cover1" id="cover1">
+			<div class="popUp" id="popBg">
+				<span class="btnClose" onclick="closePop(this)" onmouseover="btnCloseHover(this)" onmouseout="btnCloseHover2()"></span>
+				<div class="pTitle">背景图像偏好<div class="pTitleU"></div></div>
+				<div class="pContent" id="contentBg">
+					<!--<input type="radio" class="radioBox" id="useDefaultWp" name="rWallpaper" value="1" onchange="changeWp(this)"></input>
+					<label class="lblRadioBox" for="useDefaultWp">默认壁纸</label>
+					<input type="radio" class="radioBox" id="useBingWp" name="rWallpaper" value="2" onchange="changeWp(this)" checked="true"></input>
+					<label class="lblRadioBox" for="useBingWp">必应每日美图</label>
+					<input type="radio" class="radioBox" id="useLiveWp" name="rWallpaper" value="3" onchange="changeWp(this)"></input>
+					<label class="lblRadioBox" for="useLiveWp">动态壁纸</label>-->
+					<div class="pTitleS">默认</div>
+					<div class="bgPreviewBox" id="bgPreBoxD1" onclick="changeWp(this)"><div class="bgPreBoxInner" id="bgPreBoxIn1"><span class="bgPreBoxMask"></span><i class="iconfont iconCheck shouldNotFade">&#xe622;</i></div></div>
+					<div class="bgPreviewBox" id="bgPreBoxD2" onclick="changeWp(this)"><div class="bgPreBoxInner" id="bgPreBoxIn2"><span class="bgPreBoxMask"></span><i class="iconfont iconCheck shouldNotFade">&#xe622;</i></div></div>
+					<div class="pTitleS">必应</div>
+					<div class="bgPreviewBox" id="bgPreBoxBing" onclick="changeWp(this)"><div class="bgPreBoxInner" id="bgPreBoxInBing"><span class="bgPreBoxMask"></span><i class="iconfont iconCheck shouldNotFade">&#xe622;</i></div></div>
+					<div class="pTitleS">动态</div>
+					<div class="bgPreviewBox" id="bgPreBoxLive" onclick="changeWp(this)"><div class="bgPreBoxInner" id="bgPreBoxInLive"><span class="bgPreBoxMask"></span><i class="iconfont iconCheck shouldNotFade">&#xe622;</i></div></div>
+				</div>
+			</div>
+			<div class="popUp" id="popAbout">
+				<span class="btnClose" onclick="closePop(this)" onmouseover="btnCloseHover(this)" onmouseout="btnCloseHover2()"></span>
+				<div class="pTitle centerAligned">开始<!--<div class="pTitleU centerAligned"></div>--></div>
+				<div class="pContent centerAligned">
+					<p id="pVersion">version</p>
+					<p class="pAbout">web实验室<br>感谢<a href="https://cn.bing.com/" class="links1" title="必应" target="_blank">必应</a>提供的每日美图、<a href="https://hitokoto.cn/" class="links1" title="Hitokoto - 一言" target="_blank">Hitokoto - 一言</a>提供的奇怪格言<br>以及<a href="https://rthsoftware.cn/" class="links1" title="热铁盒软件" target="_blank">热铁盒软件</a>提供的诸多数据接口及安全性提升补丁~<br>Have a nice day!</p>
+					<div class="updateLog">
+						<p>更新日志</p><p>最后更新：2019.7.7</p>2019.7.7 改进 - 提升了页面加载流畅度<br>2019.6.24 改进 - 主按钮的新动画效果<br>2019.6.18 新增 -「背景图像偏好」页面的全新UI；改进 -「便笺」页面的UI调整；（由杨尚臻进行的）其他安全性更新<br>2019.4.10 新增 -「固定便笺到主屏幕」和「删除便笺」功能<br>2019.2.15 改进 - 美化了移动端和「关于」界面的UI<br>2019.2.14 新增 - 动态壁纸<br>2019.2.6 新增 -「天气」功能<br>2019.1.29 新增 -「便笺」功能<br>2019.1.16 改进 - 搜索框及候选栏UI调整；搜索框上方的标题现在将显示系统时间<br>2019.1.15 新增 - 将鼠标移至「喜欢」按钮上即可查看每日背景的相关信息；改进 - 微调了搜索框的外观<br>2019.1.11 改进 -「喜欢」按钮图标及体验美化<br>2019.1.10 新增 -「喜欢」按钮：可以为喜欢的背景图像投票；改进 - 更换了由RTH提供的背景图片API<br>2019.1.9 改进 - UI调整：排版优化；部分配色方案改为浅色系<br>2018.11.1 改进 - UI调整：引入高斯模糊特效<br>2018.10.31 新增 - 浏览器现在会保存你对「切换为默认/每日背景」的选择<br>2018.10.3 改进 - 添加常用链接；交互细节调整<br>2018.8.16 改进 - 进一步优化关键词联想候选框的弹出速度<br>2018.6.10 改进 - 更新关键词联想接口、优化候选框的弹出速度<br>2018.5.1 改进 - 全面升级为Https加密协议<br>2018.4.25 改进 - 移动端UI美化<br>2018.4.17 修复 - 快捷导航在手机上排版混乱的BUG<br>2018.4.16 修复 - 默认背景图片有时无法完全填充页面的BUG；修复 - 在iOS上点击回车无法执行搜索的BUG<br>2018.4.12 改进 - 更换背景图片API，提升加载速度和稳定性<br>2018.3.20 新增 - 搜索候选框「翻译」选项<br>2018.3.16 改进 - 网页加载时将直接显示默认背景<br>2018.3.4 新增 -「切换为默认背景」按钮；改进 - 脚本加载优先级调整<br>2017.11.10 改进 - UI调整<br>2017.10.29 改进 - UI调整；背景图片显示机制及淡入动画<br>2017.10.28 新增 - 适配移动设备<br>2017.10.15 新增 -「导航」页面<br>2017.10.5 改进 - UI调整<br>2017.10.3 新增 -「一言」功能<br>2017.10.2 上线
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="tp-weather-widget"></div>
+		<script>
+			bgPreference = localStorage.getItem("bgPreference");
+			if(bgPreference == "Bing"){
+				var bingWallpaper = localStorage.getItem("bing-wallpaper");
+				bgbox.style.backgroundImage = bingWallpaper;
+			}
+			function loadBingWallpaper(headerMap) {
+				if(bgPreference == "Bing"){
+				//document.body.style.backgroundImage = bingWallpaper;
+				bgbox.style.backgroundImage = bingWallpaper;
+				}
+				if(headerMap){
+					lastModified0 = headerMap["x-last-modified"];
+					eTag0 = headerMap["etag"];
+					console.log("Background image last modified at "+lastModified0);
+					btnLike.title = "喜欢这张壁纸：" + (headerMap["x-copyright"]);
+					getLike();
+				}
+			}
+			if (bingWallpaper) loadBingWallpaper();
+		</script>
+		<script async src="https://api.rthe.cn/backend/bing/?username=405801769jgkbjylc"></script> 
+		<!--百度统计-->
 		<script>
 			var _hmt = _hmt || [];
 			(function() {
@@ -18,54 +167,5 @@
 				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
-		<title>web实验室</title>
-		<!-- Bootstrap core CSS -->
-		<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-		<link href="cover.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class="site-wrapper">
-			<div class="site-wrapper-inner">
-				<div class="cover-container">
-					<div class="masthead clearfix">
-						<div class="inner">
-							<h3 class="masthead-brand">web实验室</h3>
-							<nav>
-								<ul class="nav masthead-nav">
-									<li class="active"><a href="/">首页</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-					<div class="inner cover">
-						<h1 class="cover-heading">web实验室正在开发中</h1>
-						<p class="lead">web实验室将全面改版,由bootstrap提供响应式布局.</p>
-					</div>
-					<!--<p class="lead">
-						<a href="#" class="btn btn-lg btn-default">Learn more</a>
-					</p>-->
-					<p class="lead">项目列表</p>
-					<a href="/yzm" style="text-decoration: underline;">验证码demo</a><br/>
-					<a href="/hao" style="text-decoration: underline;">单页导航</a><br/>
-					<a href="/js" style="text-decoration: underline;">图片墙</a><br/>
-					<a href="/jttl" style="text-decoration: underline;">鸡兔同笼</a><br/>
-					<a href="/js/jc.html" style="text-decoration: underline;">屏幕检测</a><br/>
-					<a href="/mta" style="text-decoration: underline;">mta实验室</a><br/>
-					<a href="/jz" style="text-decoration: underline;">剪纸生成器</a><br/>
-					<a href="/dw" style="text-decoration: underline;">单位换算</a><br/>
-					<a href="https://5iux.github.io/" style="text-decoration: underline;">简单搜索</a><br/>
-					<a href="https://isoyu.com/index.html" style="text-decoration: underline;">极简导航</a><br/>
-					<a href="https://pszpsz1992.000webhostapp.com/" style="text-decoration: underline;">智能代理,速度慢</a><br/>
-					<a href="/blog" style="text-decoration: underline;">博客</a>
-					<div class="mastfoot">
-						<div class="inner">
-							<p>web实验室出品</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-		<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	</body>
 </html>
