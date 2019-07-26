@@ -1,7 +1,5 @@
 /* JavaScript written by MaoRX.cn */
 var version="19w27a";
-console.info("Version "+version);
-var backend="https://maorx.cn/a/like.php";
 var lastModified0="";
 var eTag0="";
 var currentEditingNote="";
